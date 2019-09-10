@@ -24,7 +24,7 @@ tws_1  | Forking :::4001 onto 0.0.0.0:4003
 ```
 
 You can inspect the running Gateway at any time using VNC on `127.0.0.1:5901` (assuming default port is used).
- Default VNC password is `1234` ¯\_(ツ)_/¯ ...
+ Default VNC password is `1234` ... `¯\\_(ツ)_/¯` 
 
 Shutting down the InteractiveBroker Gateway container:
 ```
