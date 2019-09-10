@@ -2,6 +2,7 @@ version: '3.7'
 
 services:
   tws:
+    image: interactivebroker-gateway:v974
     build: docker-interactivebroker-gateway
 
     # The file below contains the InteractiveBroker <username> and <password> variables.
