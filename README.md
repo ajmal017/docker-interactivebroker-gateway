@@ -1,7 +1,16 @@
 # docker-interactivebroker-gateway
-Dockerized InteractiveBroker Gateway
+## Dockerized InteractiveBroker Gateway ##
 
-Find below  sample docker-compose.yml file that you can use in order to run a dockerized InteractiveBroker Gateway instance:
+The description below is referring to the GitHUb project. You need to get a few files from the project if you wish to run the gateway using docker-compose. They are already properly configured:
+
+File                                                         | Description
+----------------------------------------------------------   | -------------------------------------
+docker-compose.yml                                           | The docker-compose config file
+secrets.conf                                                 | The username/password of your InteractiveBroker account
+docker-interactivebroker-gateway/ib-config/IBController.ini  | Config file for IBController
+./docker-interactivebroker-gateway/ib-config/jts.ini         | Config file for InteractiveBroker
+
+Find below a sample docker-compose.yml file that you can use in order to run a dockerized InteractiveBroker Gateway instance:
 ```
 version: '3.7'
 
@@ -30,7 +39,7 @@ services:
     environment:
       - TZ=America/Chicago
       # Variables pulled from /IBController/IBControllerGatewayStart.sh
-      - VNC_PASSWORD=1234 # CHANGE ME
+      - VNC_PASSWORD=1234 # CHANGE ME (or not)
       - TWS_MAJOR_VRSN=974
       - IBC_INI=/root/IBController/IBController.ini
       - IBC_PATH=/opt/IBController
