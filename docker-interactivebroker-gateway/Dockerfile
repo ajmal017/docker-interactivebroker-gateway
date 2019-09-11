@@ -44,9 +44,5 @@ RUN chmod -R u+x runscript.sh \
   && chmod 777 /etc/init.d/xvfb \
   && chmod 777 /etc/init.d/vnc
 
-# Below files copied during build to enable operation without volume mount
-COPY ./ib-config/IBController.ini /root/IBController/IBController.ini
-COPY ./ib-config/jts.ini /root/Jts/jts.ini
-
 CMD bash runscript.sh
 
