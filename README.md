@@ -19,38 +19,32 @@ services:
     image: interactivebroker-gateway:v974
     build: docker-interactivebroker-gateway
 
-    # The file below contains the InteractiveBroker <username> and <password> variables.
-    # Make sure not to insert spaces around the equals sign:
-    # 
-    # TWSUSERID=<username>
-    # TWSPASSWORD=<password>
-    #
     env_file:
+      # The file below contains the InteractiveBroker <username> and <password> variables.
+      # Make sure not to insert spaces around the equals sign:
+      #
+      # TWSUSERID=<username>
+      # TWSPASSWORD=<password>
+      # Or if using FIX:
+      # FIXUSERID=
+      # FIXPASSWORD=
+      #
       - ./secrets.conf
 
     ports:
+      # Gateway API connection
       - "4003:4003"
+      # VNC
       - "5901:5900"
 
     volumes:
-      - ./docker-interactivebroker-gateway/ib-config/IBController.ini:/root/IBController/IBController.ini
-      - ./docker-interactivebroker-gateway/ib-config/jts.ini:/root/Jts/jts.ini
+      - ./ib-config/IBController.ini:/root/IBController/IBController.ini
+      - ./ib-config/jts.ini:/root/Jts/jts.ini
 
     environment:
       - TZ=America/Chicago
-      # Variables pulled from /IBController/IBControllerGatewayStart.sh
       - VNC_PASSWORD=1234 # CHANGE ME (or not)
-      - TWS_MAJOR_VRSN=974
-      - IBC_INI=/root/IBController/IBController.ini
-      - IBC_PATH=/opt/IBController
-      - TWS_PATH=/root/Jts
-      - TWS_CONFIG_PATH=/root/Jts
-      - LOG_PATH=/opt/IBController/Logs
-      - JAVA_PATH=/opt/i4j_jres/1.8.0_152/bin # JRE is bundled starting with TWS 952
       - TRADING_MODE=paper # either paper or live
-      - FIXUSERID=
-      - FIXPASSWORD=
-      - APP=GATEWAY
 
 ```
 
@@ -63,6 +57,9 @@ At this stage make sure you have a file named `secrets.conf` (default name) unde
 ```
 TWSUSERID=<username>
 TWSPASSWORD=<password>
+# Or if using FIX:
+# FIXUSERID=
+# FIXPASSWORD=
 ```
 
 Starting InteractiveBroker Gateway as a container:
