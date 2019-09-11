@@ -7,8 +7,8 @@ File                                                         | Description
 ----------------------------------------------------------   | -------------------------------------
 docker-compose.yml                                           | The docker-compose config file
 secrets.conf                                                 | The username/password of your InteractiveBroker account
-docker-interactivebroker-gateway/ib-config/IBController.ini  | Config file for IBController
-./docker-interactivebroker-gateway/ib-config/jts.ini         | Config file for InteractiveBroker
+./ib-config/IBController.ini                                 | Config file for IBController
+./ib-config/jts.ini                                          | Config file for InteractiveBroker
 
 Find below a sample docker-compose.yml file that you can use in order to run a dockerized InteractiveBroker Gateway instance:
 ```
