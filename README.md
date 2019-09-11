@@ -1,4 +1,6 @@
-# docker-interactivebroker-gateway
+
+# docker-interactivebroker-gateway #
+
 ## Dockerized InteractiveBroker Gateway ##
 
 The description below is referring to the GitHUb project. You need to get a few files from the project if you wish to run the gateway using docker-compose. They are already properly configured:
