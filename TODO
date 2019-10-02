@@ -1,0 +1,2 @@
+Moving static files to AWS S3 and making them available through Cloudfront CDN
+Removing dependency on IBController.zip and building IBController project on the fly instead
