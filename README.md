@@ -8,9 +8,15 @@ The description below is referring to the GitHUb project. You need to get a few 
 File                                                         | Description
 ----------------------------------------------------------   | -------------------------------------
 docker-compose.yml                                           | The docker-compose config file
-secrets.conf                                                 | The username/password of your InteractiveBroker account
 ./ib-config/IBController.ini                                 | Config file for IBController
 ./ib-config/jts.ini                                          | Config file for InteractiveBroker
+
+In addition you need to create the following file on your end:
+
+File                                                         | Description
+----------------------------------------------------------   | -------------------------------------
+secrets.conf                                                 | The username/password of your InteractiveBroker account
+
 
 Find below a sample docker-compose.yml file that you can use in order to run a dockerized InteractiveBroker Gateway instance:
 ```
