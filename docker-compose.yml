@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   tws:
-    image: interactivebroker-gateway:v974
+    image: interactivebroker-gateway
     build: docker-interactivebroker-gateway
 
     env_file:
@@ -12,7 +12,7 @@ services:
       # TWSUSERID=<username>
       # TWSPASSWORD=<password>
       #
-      # Or if using FIX:
+      # Or when using FIX:
       # FIXUSERID=<username>
       # FIXPASSWORD=<password>
       #
@@ -23,10 +23,6 @@ services:
       - "4003:4003"
       # VNC
       - "5901:5900"
-
-    volumes:
-      - ./ib-config/IBController.ini:/root/IBController/IBController.ini
-      - ./ib-config/jts.ini:/root/Jts/jts.ini
 
     environment:
       - TZ=America/Chicago

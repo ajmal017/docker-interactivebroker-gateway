@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 
 LABEL maintainer="Christophe Alexandre <chris.perso@gmail.com>"
 
@@ -45,4 +45,3 @@ RUN chmod -R u+x runscript.sh \
   && chmod 777 /etc/init.d/vnc
 
 CMD bash runscript.sh
-
