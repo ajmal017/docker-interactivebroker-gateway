@@ -3,20 +3,11 @@
 
 ## Dockerized InteractiveBroker Gateway ##
 
-The description below is referring to the GitHUb project. You need to get a few files from the project if you wish to run the gateway using docker-compose. They are already properly configured:
+REQUIREMENTS - You will need to create the following file in order to authenticate with InteractiveBroker Gateway (see the sample `docker-compose.yml` config file below for an example):
 
-File                                                         | Description
-----------------------------------------------------------   | -------------------------------------
-docker-compose.yml                                           | The docker-compose config file
-./ib-config/IBController.ini                                 | Config file for IBController
-./ib-config/jts.ini                                          | Config file for InteractiveBroker
-
-In addition you need to create the following file on your end:
-
-File                                                         | Description
-----------------------------------------------------------   | -------------------------------------
-secrets.conf                                                 | The username/password of your InteractiveBroker account
-
+File                  | Description
+-------------------   | -------------------------------------
+secrets.conf          | The username/password of your InteractiveBroker account
 
 Find below a sample docker-compose.yml file that you can use in order to run a dockerized InteractiveBroker Gateway instance:
 ```
@@ -24,7 +15,7 @@ version: '3.7'
 
 services:
   tws:
-    image: interactivebroker-gateway:v974
+    image: interactivebroker-gateway
     build: docker-interactivebroker-gateway
 
     env_file:
@@ -44,10 +35,6 @@ services:
       - "4003:4003"
       # VNC
       - "5901:5900"
-
-    volumes:
-      - ./ib-config/IBController.ini:/root/IBController/IBController.ini
-      - ./ib-config/jts.ini:/root/Jts/jts.ini
 
     environment:
       - TZ=America/Chicago
